@@ -1,0 +1,16 @@
+FLAGS=@CFLAGS@ @DEFS@
+LIBUSEFUL_BUNDLED=@LIBUSEFUL_BUNDLED@
+LIBS=$(LIBUSEFUL_BUNDLED) @LIBS@
+
+all: $(LIBUSEFUL_BUNDLED)
+	gcc $(FLAGS) -oayb main.c $(LIBS) 
+
+libUseful-bundled/libUseful.a:
+	make -C libUseful-bundled
+
+clean:
+	-rm *.o */*.o */*.a */*.so .*.swp *.orig tests/*.* 
+	make -C libUseful-bundled clean
+
+check: ayb
+	@./check.sh
