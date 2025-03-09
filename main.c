@@ -688,7 +688,7 @@ void AddEncodingHeaders(STREAM *Out, TSettings *Settings)
             break;
 
         case ENCODE_YENCODE:
-            Tempstr=FormatStr(Tempstr, "=ybegin mode=%o size=%ld name=%s\n",FStat.st_mode & 511, FStat.st_size, GetBasename(Settings->InPath));
+            Tempstr=FormatStr(Tempstr, "=ybegin mode=%o size=%lu name=%s\n",FStat.st_mode & 511, (unsigned long) FStat.st_size, GetBasename(Settings->InPath));
             break;
         }
         if (StrValid(Tempstr)) STREAMWriteLine(Tempstr, Out);

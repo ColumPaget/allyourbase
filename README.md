@@ -12,7 +12,18 @@ AllYourBase can currently only handle one encoded block per file, so it is not p
 libUseful has encoders for ascii85 and z85, but these appear to be incorrect and are not supported in AllYourBase at current.
 
 
-# Usage
+# INSTALL
+
+```
+  ./configure
+  make
+```
+
+should produce an executable called 'ayb'. Run 'configure --help' to see options that can be passed to configure.
+
+
+
+# USAGE
 
 ``` 
    ayb [-w <wide>] [-h] [-i <format>] [-o <format>] [infile] [outfile]

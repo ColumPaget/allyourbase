@@ -66,7 +66,7 @@ Test base32 raw tests/services.base32 9d39e51e6bd5a30168c26c57b66d2e37 "Decode B
 Test cbase32 raw tests/services.cbase32 9d39e51e6bd5a30168c26c57b66d2e37 "Decode Crockford's Base32"
 Test zbase32 raw tests/services.zbase32 9d39e51e6bd5a30168c26c57b66d2e37 "Decode Zooko Wilcox-O'Hearn's Base32"
 Test hbase32 raw tests/services.hbase32 9d39e51e6bd5a30168c26c57b66d2e37 "Decode Extended-hex Base32"
-Test base32 raw tests/services.basenc32 9d39e51e6bd5a30168c26c57b66d2e37 "Decode Base32 encoded by basenc with non-standard line length"
+Test base32 raw tests/services-base32enc 9d39e51e6bd5a30168c26c57b66d2e37 "Decode Base32 encoded by basenc with non-standard line length"
 Test bech32 raw tests/services.bech32 9d39e51e6bd5a30168c26c57b66d2e37 "Decode Bitcoin-style Bech32"
 Test base64 raw tests/services.base64 9d39e51e6bd5a30168c26c57b66d2e37 "Decode Base64"
 Test rbase64 raw tests/services.rbase64 9d39e51e6bd5a30168c26c57b66d2e37 "Decode URL-safe Base64"
