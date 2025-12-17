@@ -70,15 +70,16 @@ fi
 fi
 
 
-AC_ARG_WITH(libuseful, [  --with-libuseful       use systemwide libUseful.so rather than bundled version], cf_with_libuseful=$withval )
-
+AC_ARG_WITH(libuseful, [  --with-libuseful       use systemwide libUseful.so rather than bundled version], cf_with_libuseful=$withval, cf_with_libuseful="auto" )
 
 AC_SUBST(LIBUSEFUL_BUNDLED, "")
+
 
 if test "$cf_with_libuseful" != "no" -a "$cf_with_libuseful" != ""
 then
 AC_CHECK_LIB(Useful,[GetToken])
 AC_CHECK_LIB(Useful,[base32encode])
+AC_CHECK_LIB(Useful,[baseXXencode])
 fi
 
 
@@ -87,6 +88,11 @@ AC_CHECK_LIB([Useful],[OpenSSLVerifyCallback],
   [AC_CHECK_LIB([crypto],[ERR_load_CRYPTO_strings],,,[-lz])]
   [AC_CHECK_LIB([z],[inflate])]
   ,,[-lssl -lcrypto -lz])
+
+if test "$ac_cv_lib_Useful_baseXXencode" == "yes"
+then 
+ac_cv_lib_Useful_base32encode="yes" 
+fi
 
 
 if test "$ac_cv_lib_Useful_GetToken" == "yes" -a "$ac_cv_lib_Useful_base32encode" == "yes"
